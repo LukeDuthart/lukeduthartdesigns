@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Motion Graphics Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #222;
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 1s ease-in-out forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .sidebar {
+      width: 300px;
+      padding: 2rem;
+      border-right: 1px solid #dddddd00;
+      position: fixed;
+      height: 100vh;
+      overflow-y: auto;
+      background-color: #fff;
+    }
+
+    .sidebar h1 {
+      font-size: 1.5rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .sub-nav a {
+      display: block;
+      margin-bottom: 0.25rem;
+      color: #000;
+      text-decoration: none;
+    }
+
+    .sub-nav a:hover {
+      text-decoration: underline;
+    }
+
+    .sidebar p {
+      margin-bottom: 2.5rem;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 2.5rem;
+    }
+
+    .sidebar li {
+      margin-bottom: 0.5rem;
+    }
+
+    .sidebar a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    .sidebar a:hover {
+      text-decoration: underline;
+    }
+
+    .social-links a {
+      margin-right: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .content {
+      margin-left: 300px;
+      flex: 1;
+      padding: 2rem;
+    }
+
+    .grid-container {
+      max-width: 1150px;
+      padding-right: 80px;
+      margin: 0 auto;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 0.25rem;
+    }
+
+    .grid-item {
+      display: inline-block;
+      width: 100%;
+      position: relative;
+    }
+
+    .grid-item a {
+      display: inline-block;
+    }
+
+    .grid img,
+    .grid video {
+      width: 100%;
+      height: auto;
+      display: block;
+      border: 1px solid #cccccc;
+      object-fit: cover;
+    }
+
+    /* Independent control for each media */
+    .media-1 { position: relative; left: 0px; top: 0px; }
+    .media-2 { position: relative; left: 0px; top: 0px; }
+    .media-3 { position: relative; left: 0px; top: px; }
+    .media-4 { position: relative; left: 0px; top: -154px; }
+    .media-5 { position: relative; left: 0px; top: -200px; }
+    .media-6 { position: relative; left: 0px; top: -360px; }
+    .media-7 { position: relative; left: 0px; top: -235px; }
+    .media-8 { position: relative; left: 0px; top: 0px; }
+    .media-9 { position: relative; left: 0px; top: 0px; }
+    .media-10 { position: relative; left: 0px; top: -235px; }
+    .media-11 { position: relative; left: 0px; top: -369px; }
+    .media-12 { position: relative; left: 0px; top: -215px; }
+    .media-13 { position: relative; left: 0px; top: -217px; }
+    .media-15 { position: relative; left: 0px; top: -2px; }
+    .media-16 { position: relative; left: px; top: 0px; }
+    .media-17 { position: relative; left: px; top: -217px; }
+    .media-18 { position: relative; left: px; top: -237px; }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar fade-in">
+    <h1><a href="home.html">lukeduthart.design</a></h1>
+    <div class="sub-nav">
+      <a href="home.html">HOME</a>
+      <a href="about.html">ABOUT</a>
+    </div>
+
+    <p>> Hello! 👋 I’m <a href="about.html">Luke</a>, a Glasgow-based graphic designer and artist focused on creating exciting graphics through experimental visual studies and brand-led projects.</p>
+
+    <ul>
+      <li><a href="LUMA.html"> LUMA</a></li>
+      <li><a href="aveda.html"> Aveda</a></li>
+      <li><a href="ID3NT1TY.html"> 1D3NT1TY</a></li>
+    </ul>
+
+    <ul>
+      <li><a href="project1.html"> Fischinger Study</a></li>
+      <li><a href="project3.html"> Narrative Motion Study </a></li>
+      <li><a href="project2.html"> Cuba Study</a></li>
+      
+    </ul>
+
+    <ul>
+      <li><a href="project1.html" class="active"></a>lukeduthart02@gmail.com</li>
+      <li>07936052578</li>
+    </ul>
+
+    <div class="social-links">
+      <a href="#" aria-label="Instagram"></a>
+      <a href="mailto:you@example.com" aria-label="Email"></a>
+      <a href="#" aria-label="LinkedIn"></a>
+    </div>
+  </div>
+
+  <div class="content fade-in">
+    <div class="grid-container">
+      <div class="grid">
+        <div class="grid-item media-1">
+          <a href="ID3NT1TY.html">
+            <video autoplay muted loop playsinline>
+              <source src="Images/FINAL_IMAGES_AND_VIDEOS/ID3NT1TY/VIDEOS/FACE_LOOP.mp4" type="video/mp4">
+            </video>
+          </a>
+        </div>
+
+        <div class="grid-item media-3">
+          <a href="project1.html">
+            <video autoplay muted loop playsinline>
+              <source src="Images/FINAL_IMAGES_AND_VIDEOS/MISC/OSKAR_FISCHINGER_INSPIRED_WORK/SPLIT.mp4" type="video/mp4">
+            </video>
+          </a>
+        </div>
+
+         <div class="grid-item media-16">
+          <a href="LUMA.html">
+            <video autoplay muted loop playsinline>
+              <source src="Images/FINAL_IMAGES_AND_VIDEOS/LUMA/FINAL_RENDERS/Motion_Graphic_One_1.mp4" type="video/mp4">
+            </video>
+          </a>
+        </div>
+
+        <div class="grid-item media-15">
+          <a href="project2.html">
+            <video autoplay muted loop playsinline>
+              <source src="Images/FINAL_IMAGES_AND_VIDEOS/MISC/OSKAR_FISCHINGER_INSPIRED_WORK/render50505.mp4" type="video/mp4">
+            </video>
+          </a>
+        </div>
+        
+         <div class="grid-item media-7">
+          <a href="aveda.html">
+            <img src="Images/FINAL_IMAGES_AND_VIDEOS/AVEDA/FINAL_FLAT_ARTWORKS/AVEDA_POSTER.png" alt="Project 5" />
+          </a>
+        </div>
+
+         <div class="grid-item media-4">
+          <a href="project3.html">
+            <video autoplay muted loop playsinline>
+              <source src="Images/FINAL_IMAGES_AND_VIDEOS/MISC/MOTION_GRAPHIC_ARTWORK/LOOP_PREVIEW_NEW_RES.mp4" type="video/mp4">
+            </video>
+          </a>
+        </div>
+
+<div class="grid-item media-17">
+  <a href="LUMA.html">
+    <div style="height: 334px; overflow: hidden;">
+      <img src="Images/FINAL_IMAGES_AND_VIDEOS/LUMA/FINAL_RENDERS/logo1080.png"
+           alt="Logo animation image"
+           style="width: 100%; object-fit: cover; object-position: top;" />
+    </div>
+  </a>
+</div>
+
+        <div class="grid-item media-18">
+          <a href="ID3NT1TY.html">
+            <video autoplay muted loop playsinline>
+              <source src="Images/FINAL_IMAGES_AND_VIDEOS/ID3NT1TY/VIDEOS/curve2.mp4" type="video/mp4">
+            </video>
+          </a>
+        </div>
+  
+
+           <div class="grid-item media-11">
+          <a href="aveda.html">
+            <video autoplay muted loop playsinline>
+              <source src="Images/FINAL_IMAGES_AND_VIDEOS/AVEDA/FINAL_FLAT_ARTWORKS/eye_ole.mp4" type="video/mp4">
+            </video>
+          </a>
+        </div>
+  

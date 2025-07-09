@@ -1,0 +1,267 @@
+/* Styling the sidebar navigation */
+.sub-nav {
+  display: flex;
+  gap: 1.8rem;
+  margin-top: 0rem;
+  margin-bottom: 2rem;
+}
+
+.sub-nav a {
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: #444;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.sub-nav a:hover {
+  border-color: #000;
+}
+
+/* Adjust spacing below "Selected Works" heading */
+.selected-works-title {
+  margin-top: 2rem; /* Adjusted space above the "Selected Works" title */
+  margin-bottom: 0.25rem; /* Reduced space below the title */
+  font-size: 1rem;
+}
+
+/* Sidebar link list styling */
+.sidebar ul {
+  list-style: none;
+  padding-left: 1.25rem; /* Indent the list */
+  line-height: 1rem; /* Increase line spacing */
+  margin-top: 0; /* Remove any top margin */
+  margin-bottom: 0; /* Remove any bottom margin */
+}
+
+/* Sidebar links */
+.sidebar a {
+  color: #000;
+  text-decoration: none;
+}
+
+/* Highlight active link */
+.sidebar a.active {
+  font-weight: bold;
+  color: #7c5fff; /* Highlight color */
+  text-decoration: none;
+}
+
+/* Image gallery */
+.image-gallery {
+  display: flex;
+  flex-direction: column; /* Align images vertically */
+  align-items: flex-start; /* Align to left */
+}
+
+/* Resizable images */
+.resizable {
+  width: 50%; /* Image will resize to fit container width */
+  max-width: 650px; /* Max width of the image */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 25px; /* Space between images */
+}
+
+/* Project title styling */
+.project-title {
+  font-size: 1.2rem; /* Adjusted font size for project title */
+}
+
+/* Adjust space between scope and overview columns */
+.columns-container {
+  display: flex;
+  gap: 0.5rem; /* Adjust the gap between the two columns */
+}
+
+.scope-column {
+  margin-right: 10rem; /* Space to the right of the scope column */
+}
+
+.overview-column {
+  flex: 1; /* Ensure equal width */
+  margin-left: 1rem; /* Space to the left of the overview column */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-out forwards;
+  opacity: 0;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Add this at the end of your style block */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Apply fade-in effect to the entire page */
+body {
+  animation: fadeIn 2s ease-in-out;
+}
+
+/* Optional: Add fade-in effect to video */
+video {
+  animation: fadeIn 2s ease-in-out;
+  display: block;
+  margin-left: 0; /* Align video to the far left */
+}
+
+.content {
+  padding: 3rem 22rem 3rem 5rem; /* top, right, bottom, left */
+}
+
+video {
+  animation: fadeIn 2s ease-in-out;
+  display: block;
+  margin-left: 1 rem; /* Move slightly to the left */
+}
+
+.video-slider {
+  display: flex;
+  transition: transform 0.6s ease;
+  width: 900%;
+  margin-left: 10 rem; /* shift left by 2rem */
+}
+
+
+
+.video-slider-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0 rem;
+  margin: 1rem 5;
+  margin-left: -75px;
+}
+
+.slider-arrow {
+  background-color: #33333300;
+  color: #000000;
+  border: none;
+  padding: 0.1rem 1rem;
+  font-size: 25 rem;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 2
+;
+}
+
+.slider-arrow:hover {
+  background-color: #55555500;
+}
+
+.video-slide {
+  display: none;
+  opacity: 0.5;
+  transform: scale(0.2);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.video-slide.active {
+  display: block;
+  opacity: 1;
+  transform: scale(1.1);
+  z-index: 0.5;
+
+
+  .image-fade-gallery {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 100px auto 50px auto;
+  height: auto;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.video-grid video {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  max-width: 100%;
+}
+
+.grid-2x2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  align-items: start;
+  justify-items: center;
+}
+
+.grid-2x2 .grid-item video {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+}
+
+
+.grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap; /* allows responsiveness on small screens */
+  justify-content: flex-start;
+  margin-bottom: 2rem;
+}
+
+.grid-item {
+  flex: 1 1 45%;
+  max-width: 45%;
+}
+
+<div class="grid">
+  <div class="grid-item">
+    <video src="Images/FINAL_IMAGES_AND_VIDEOS/MISC/OSKAR_FISCHINGER_INSPIRED_WORK/FISCHINGER_WORK.mp4" width="100%" autoplay loop muted></video>
+    <p>This video</p>
+  </div>
+  <div class="grid-item">
+    <video src="Images/FINAL_IMAGES_AND_VIDEOS/MISC/OSKAR_FISCHINGER_INSPIRED_WORK/FISCHINGER_WORK.mp4" width="100%" autoplay loop muted></video>
+    <p>This video</p>
+  </div>
+</div>
+
+/* Manual positioning - tweak these */
+.item1 { left: 50px; top: 50px; }
+.item2 { left: 100px; top: 70px; }
+.item3 { left: 750px; top: 50px; }
+.item4 { left: 50px; top: 350px; }
+.item5 { left: 400px; top: 350px; }
+.item6 { left: 50px; top: 350px; }
+.item7 { left: 50px; top: 650px; }
+.item8 { left: 400px; top: 650px; }
+
+

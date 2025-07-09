@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ID3NT1TY</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    * {
+      
+      html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #222;
+      display: flex;
+      min-height: 100vh;
+      animation: fadeIn 2s ease-in-out; /* Apply fade-in effect to the body */
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .sidebar {
+      width: 300px;
+      padding: 2rem;
+      border-right: 1px solid #dddddd00;
+      position: fixed;
+      height: 100vh;
+      overflow-y: auto;
+      background-color: #fff;
+    }
+
+    .sidebar h1 {
+      font-size: 1.5rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .sub-nav {
+      display: flex;
+      gap: 1.8rem;
+      margin-top: 0.1rem;
+      margin-bottom: 2rem;
+    }
+
+    .sub-nav a {
+      font-size: 0.9rem;
+      text-decoration: none;
+      color: #444;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s ease;
+    }
+
+    .sub-nav a:hover {
+      border-color: #000;
+    }
+
+    .sidebar p {
+      margin-bottom: 2.5rem;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding-left: 1.25rem;
+      line-height: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .sidebar li {
+      margin-bottom: 0.5rem;
+    }
+
+    .sidebar a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    .sidebar a:hover {
+      text-decoration: underline;
+    }
+
+    .sidebar a.active {
+      font-weight: bold;
+      color: #7c5fff;
+      text-decoration: none;
+    }
+
+    .social-links a {
+      margin-right: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .content {
+      margin-left: 400px;
+      padding: 9.5rem;
+      flex: 1;
+    }
+
+    .project-media {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .image-entry {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .project-title {
+      font-size: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .project-description {
+      font-size: 1rem;
+      margin-top: 0.5rem;
+      max-width: 600px;
+    }
+
+    .image-gallery {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .resizable {
+      width: 50%;
+      max-width: 400px;
+      height: auto;
+      margin-bottom: 70px;
+    }
+
+    .project-info {
+      display: flex;
+      justify-content: space-between;
+      gap: 3rem;
+      margin-top: -40px;
+      margin-bottom: 20px;
+    }
+
+    .project-info .scope,
+    .project-info .overview {
+      flex: 1;
+    }
+
+    .project-info h3 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-info ul {
+      padding-left: 1rem;
+      list-style: disc;
+    }
+
+    .project-info p {
+      line-height: 1.5;
+    }
+
+    /* Adjusting space between scope and overview columns */
+    .columns-container {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .scope-column, .overview-column {
+      flex: 1;
+    }
+
+    .scope-column {
+      margin-right: 10rem;
+    }
+
+    .overview-column {
+      margin-left: 10rem;
+    }
+
+    /* Fade-in effect for video */
+    video {
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    /* Video slider styles */
+    .video-slider-container {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      margin: 4rem 0;
+      margin-left: -100px; /* Added margin-left per your original wrapper */
+    }
+
+    .video-slider {
+      display: flex;
+      transition: transform 0.6s ease;
+      width: 300%;
+    }
+
+    .video-slide {
+      flex: 0 0 33.3333%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0.5;
+      transform: scale(0.9);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .video-slide.active {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .video-slide video {
+      max-width: 90%;
+      border-radius: 10px;
+    }
+
+    .slider-buttons {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .slider-buttons button {
+      margin: 0 10px;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      border: none;
+      background-color: #333;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .slider-buttons button:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h1><a href="home.html">lukeduthart.design</a></h1>
+    <div class="sub-nav">
+      <a href="home.html">HOME</a>
+      <a href="about.html">ABOUT</a>
+    </div>
+
+    <p>> Hello! 👋 I’m <a href="about.html">Luke</a>, a Glasgow-based graphic designer and artist focused on creating exciting graphics through experimental visual studies and brand-led projects.</p>
+
+    
+ <ul>
+      <li><a href="LUMA.html"> LUMA</a></li>
+      <li><a href="aveda.html"> Aveda</a></li>
+      <li><a href="ID3NT1TY.html"> 1D3NT1TY</a></li>
+    </ul>
+
+    <ul>
+      <li><a href="project1.html"> Fischinger Study</a></li>
+      <li><a href="project3.html"> Narrative Motion Study </a></li>
+      <li><a href="project2.html"> Cuba Study</a></li>
+      
+    </ul>
+
+    <ul>
+      <li><a href="project1.html" class="active"></a>lukeduthart02@gmail.com</li>
+      <li>07936052578</li>
+    </ul>
+
+    <div class="social-links">
+      <a href="#" aria-label="Instagram"></a>
+      <a href="mailto:you@example.com" aria-label="Email"></a>
+      <a href="#" aria-label="LinkedIn"></a>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="project-media">
+      
+
+
+      <!-- Project info (Scope & Overview) -->
+      <div class="project-info">
+        <div class="columns-container">
+          <div class="scope-column">
+
+          <img src="Images/FINAL_IMAGES_AND_VIDEOS/AVEDA/FINAL_FLAT_ARTWORKS/aveda_texture.png" width="1100" style="margin-bottom: 50px;" alt="ID3NT1TY Logo Mockup" />
+
+
+               <!-- First image -->
+<div class="media-block">
+  <a>
+    <img src="Images/FINAL_IMAGES_AND_VIDEOS/AVEDA/FINAL_FLAT_ARTWORKS/description.png" width="1100" alt="Motion Graphic One" />
+  </a>
+</div>
+
+          </div>
+          <div class="overview-column">
+           
+           
+          </div>
+        </div>
+      </div>
+
+     <!-- Video 1 -->
+<img src="Images/FINAL_IMAGES_AND_VIDEOS/AVEDA/FINAL_FLAT_ARTWORKS/mock_aveda.png" width="1100" style="margin-bottom: 150px;" alt="Face, Nailed Down Mockup" />
+
+
+<img src="Images/FINAL_IMAGES_AND_VIDEOS/AVEDA/FINAL_FLAT_ARTWORKS/dev_3.png" width="1100" style="margin-bottom: 150px;" alt="Face, Nailed Down Mockup" />
+
+<!-- Video 3 -->
+<video autoplay muted loop playsinline width="1100" style="margin-bottom: 150px;">
+  <source src="Images/FINAL_IMAGES_AND_VIDEOS/AVEDA/FINAL_FLAT_ARTWORKS/90.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+
+  
+
+
